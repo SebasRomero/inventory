@@ -11,7 +11,7 @@ var settingsFile []byte
 
 type DatabaseConfig struct {
 	Host     string `yaml:"host"`
-	Port     string `yaml:"port"`
+	Port     int    `yaml:"port"`
 	User     string `yaml:"user"`
 	Password string `yaml:"password"`
 	Name     string `yaml:"name"`
@@ -23,12 +23,12 @@ type Settings struct {
 }
 
 func New() (*Settings, error) {
-	var settings Settings
+	var s Settings
 
-	err := yaml.Unmarshal(settingsFile, &settings)
+	err := yaml.Unmarshal(settingsFile, &s)
 	if err != nil {
 		return nil, err
 	}
 
-	return &settings, nil
+	return &s, nil
 }
