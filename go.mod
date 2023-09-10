@@ -3,6 +3,8 @@ module github.com/sebasromero/go_inventory
 go 1.19
 
 require (
+	github.com/go-sql-driver/mysql v1.7.1 // indirect
+	github.com/jmoiron/sqlx v1.3.5 // indirect
 	go.uber.org/atomic v1.7.0 // indirect
 	go.uber.org/dig v1.17.0 // indirect
 	go.uber.org/fx v1.20.0 // indirect
