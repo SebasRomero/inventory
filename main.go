@@ -1,8 +1,6 @@
 package main
 
 import (
-	"log"
-
 	"github.com/sebasromero/go_inventory/settings"
 	"go.uber.org/fx"
 )
@@ -12,11 +10,7 @@ func main() {
 		fx.Provide(
 			settings.New,
 		),
-		fx.Invoke(
-			func(settings *settings.Settings) {
-				log.Println(settings)
-			},
-		),
+		fx.Invoke(),
 	)
 
 	app.Run()
